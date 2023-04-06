@@ -1,0 +1,52 @@
+.cart-info{
+    width: 571px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    margin: 40px auto;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.cart-info img{
+    width: 91px;
+    height: 91px;
+    
+}
+
+.product-details p{
+    margin:0 15px;
+}
+.product-details{
+    flex-grow: 1;
+    line-height:25px;
+}
+.orange-text{
+    color: orange;
+    font-weight: bold;
+}
+.name-text{
+    font-size: larger;
+    font-weight: bolder;
+}
+.delete-btn{
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    background-color: rgba(235, 87,87, 0.3);
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.icon-btn{
+    color: #EB5757;
+    height: 31.428573608398438px;
+width: 27.5px;
+left: 5.107177734375px;
+top: 3.1428604125976562px;
+border-radius: 0px;
+
+}
