@@ -38,19 +38,19 @@ color: #2A414F;
 margin: 30px auto;
 }
 .form-control{
-    padding-bottom: 40px;
-    margin-bottom: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 .form-control label{
  
 width: 41px;
 height: 20px;
-padding: 8px;
+padding: 5px;
 font-family: 'Lato';
 font-style: normal;
 font-weight: 600;
-font-size: 19px;
-line-height: 20px;
+font-size: 17px;
+line-height: 4px;
 letter-spacing: 0.0015em;
 
 color: #2A414F;
@@ -60,7 +60,7 @@ display: block;
 
 .form-control input{
     box-sizing: border-box;
-position: absolute;
+
 width: 415px;
 height: 55px;
 border: 1px solid #95A0A7;
@@ -68,14 +68,17 @@ border-radius: 5px;
 font-size: 1.5em;
 padding-left: 5px;
 }
-
+.show-hide{
+    color:rgba(255, 153, 0, 0.9);
+    font-size: larger;
+}
 .btn-submit{
 
 width: 415px;
 height: 55px;
 background: rgba(255, 153, 0, 0.3);
 border-radius: 5px;
-margin-top: 45px;
+margin-top: 35px;
 font-weight: 600;
 font-size: 19px;
 }

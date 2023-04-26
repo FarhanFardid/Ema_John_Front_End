@@ -2,24 +2,37 @@
     display:flex;
      justify-content: space-between;
      background-color: #1C2B35;
-     padding-left: 100px;
-     padding-right: 60px;
+
      align-items: center;
      margin: 0;
+     padding: 20px 40px 20px 80px;
 
 }
 .nav-logo{
-    padding: 15px;
+    padding: 5px;
+
+}
+.user{
+    color:white;
+    font-size:large;
+    font-weight: 500;
+    text-align: center;
 }
 
 .nav-link a{
     color:white;
     font-size:x-large;
-    padding: 15px;
+    padding:20px;
     font-weight: 700;
     /* margin-top: 5px; */
     text-decoration: none;
     
+}
+.nav-link{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 }
 
 .nav-link a:hover{

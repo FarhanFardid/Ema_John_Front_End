@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/solid'
 import { AuthContext } from '../../Providers/AuthProvider';
 
@@ -9,7 +9,12 @@ import { AuthContext } from '../../Providers/AuthProvider';
 const Login = () => {
 
     const {signUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [show,setShow] = useState(false);
     // console.log(signUser);
+
+    const from = location.state?.from?.pathname || '/'
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
@@ -23,6 +28,7 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser);
             form.reset()
+            navigate(from,{replace:true})
         })
         .catch(error => {
             console.log(error);
@@ -41,7 +47,9 @@ const Login = () => {
                 </div>
                 <div className='form-control'>
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" placeholder='Enter Password' required />
+                    <input type={show ? "text": "password"} name="password" placeholder='Enter Password' required />
+                    <div className='show-hide' onClick={() => setShow(!show)}><small>
+                        {show ? <p> Hide password </p> : <p>Show password</p> }</small></div>
 
                 </div>
                 <input className='btn-submit' type="submit" value="Login" />

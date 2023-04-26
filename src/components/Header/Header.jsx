@@ -20,13 +20,14 @@ const Header = () => {
       <div className="nav-logo">
         <img src={logo} alt="logo" />
       </div>
+      <div className="user"> {user && <p>User Profile: {user.email}</p>}</div>
       <div className="nav-link">
         <Link to="/">Shop</Link>
         <Link to="/orders">Orders</Link>
         <Link to="/inventory">Inventory</Link>
-        <Link to="/login">Login</Link>
+    
         <Link to="/signup">Sign Up</Link>
-        {user && <span> <p>{user.name}</p><button onClick={handleLogout}>Sign Out</button> </span>   }
+        {user ? <Link onClick={handleLogout}>LogOut</Link>  :  <Link to="/login">Login</Link> }
       </div>
     </nav>
   );

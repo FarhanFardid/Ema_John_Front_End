@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import './SignUp.css'
 import { Link } from 'react-router-dom';
 import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/solid'
-import { AuthContext } from '../../../Providers/AuthProvider';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const SignUp = () => {
 
@@ -47,17 +47,17 @@ const SignUp = () => {
         <div className='form-container-sign'>
             <h2 className='form-title-sign'>Sign UP</h2>
             <form onSubmit={handleSignUp}>
-                <div className='form-control'>
+                <div className='form-controls'>
                     <label htmlFor="email">Email</label>
                     <input type="email" name="email" placeholder='Enter Email' required />
 
                 </div>
-                <div className='form-control'>
+                <div className='form-controls'>
                     <label htmlFor="password">Password</label>
                     <input type="password" name="password" placeholder='Enter Password' required />
 
                 </div>
-                <div className='form-control'>
+                <div className='form-controls'>
                     <label htmlFor="confirm">Confirm Password</label>
                     <input type="password" name="confirm" placeholder='Re-Enter Password' required />
 
