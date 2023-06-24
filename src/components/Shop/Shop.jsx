@@ -29,20 +29,41 @@ const options = [5,10,20];
   }
   // const pageNumbers = [...Array(totalPage).keys()];
 
-  useEffect(() => {
-    fetch("http://localhost:5000/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/products")
+  //     .then((res) => res.json())
+  //     .then((data) => setProducts(data));
+  // }, []);
+
+  useEffect(()=>{
+    async function fetchData(){
+      const response =  await fetch(`http://localhost:5000/products?page=${currentPage}&limit=${itemsPerPage}`);
+      const data = await response.json();
+      setProducts(data);
+    }
+    fetchData();
+  },[currentPage,itemsPerPage])
 
   // retrieve data from localStorage
   useEffect(() => {
     const storedCart = getShoppingCart();
+    const ids = Object.keys(storedCart);
+
+    fetch(`http://localhost:5000/productsByIds`, {
+ 
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body:JSON.stringify(ids)
+  })
+  .then(res => res.json())
+  .then (cartProducts=>{
     let savedCart = [];
     //   step 1: get id from stored cart
     for (const id in storedCart) {
       // step 2: get product from products data by id
-      const addedProduct = products.find((product) => product._id === id);
+      const addedProduct = cartProducts.find((product) => product._id === id);
       //   console.log(addedProduct);
       if (addedProduct) {
         // step 3: set the quantity of the products
@@ -53,8 +74,10 @@ const options = [5,10,20];
         savedCart.push(addedProduct);
       }
     }
-    //  step 5: set the savedcart to cart
+    //  step 5: set the savedCart to cart
     setCart(savedCart);
+  })
+   
   }, [products]);
 
   const addToCart = (product) => {
@@ -113,7 +136,7 @@ const options = [5,10,20];
       <div className="pagination">
         <p>Current page: {currentPage}</p>
         {
-          pageNumbers.map(number => <button onClick={()=> setCurrentPage(number)} className={currentPage === number? 'btn selected' : 'btn'} key={number}>{number}</button>)
+          pageNumbers.map(number => <button onClick={()=> setCurrentPage(number)} className={currentPage === number? 'btn selected' : 'btn'} key={number}>{number + 1}</button>)
         }
         <select  value={itemsPerPage} onChange={handleSelectChange}>
           {

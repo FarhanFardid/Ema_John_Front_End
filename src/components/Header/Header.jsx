@@ -24,7 +24,7 @@ const Header = () => {
       <div className="nav-link">
         <Link to="/">Shop</Link>
         <Link to="/orders">Orders</Link>
-        <Link to="/inventory">Inventory</Link>
+        {/* <Link to="/inventory">Inventory</Link> */}
     
         <Link to="/signup">Sign Up</Link>
         {user ? <Link onClick={handleLogout}>LogOut</Link>  :  <Link to="/login">Login</Link> }
