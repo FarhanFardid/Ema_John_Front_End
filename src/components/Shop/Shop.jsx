@@ -30,14 +30,14 @@ const options = [5,10,20];
   // const pageNumbers = [...Array(totalPage).keys()];
 
   // useEffect(() => {
-  //   fetch("http://localhost:5000/products")
+  //   fetch("https://6-ema-john-server.vercel.app/products")
   //     .then((res) => res.json())
   //     .then((data) => setProducts(data));
   // }, []);
 
   useEffect(()=>{
     async function fetchData(){
-      const response =  await fetch(`http://localhost:5000/products?page=${currentPage}&limit=${itemsPerPage}`);
+      const response =  await fetch(`https://6-ema-john-server.vercel.app/products?page=${currentPage}&limit=${itemsPerPage}`);
       const data = await response.json();
       setProducts(data);
     }
@@ -49,7 +49,7 @@ const options = [5,10,20];
     const storedCart = getShoppingCart();
     const ids = Object.keys(storedCart);
 
-    fetch(`http://localhost:5000/productsByIds`, {
+    fetch(`https://6-ema-john-server.vercel.app/productsByIds`, {
  
     method: 'POST',
     headers: {
