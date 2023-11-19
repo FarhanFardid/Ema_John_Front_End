@@ -65,7 +65,7 @@ const SignUp = () => {
                 <input className='btn-submit' type="submit" value="Sign Up" />
 
                 <p className='info-text'>Already Have an Account? <Link className='link-text' to='/login'>Login</Link></p>
- <div><button className='btn-google'><p> Continue with Google</p> <ArrowRightOnRectangleIcon className="icon" /></button></div>
+ {/* <div><button className='btn-google'><p> Continue with Google</p> <ArrowRightOnRectangleIcon className="icon" /></button></div> */}
                 
 
             </form>

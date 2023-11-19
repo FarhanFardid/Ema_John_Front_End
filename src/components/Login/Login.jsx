@@ -55,7 +55,7 @@ const Login = () => {
                 <input className='btn-submit' type="submit" value="Login" />
 
                 <p className='info-text'>New to Ema-John? <Link className='link-text' to='/signup'>Create New Account</Link></p>
- <div><button className='btn-google'><p> Continue with Google</p> <ArrowRightOnRectangleIcon className="icon" /></button></div>
+ {/* <div><button className='btn-google'><p> Continue with Google</p> <ArrowRightOnRectangleIcon className="icon" /></button></div> */}
                 
 
             </form>
