@@ -1,4 +1,4 @@
-Ema_John E-Commerce
+# Ema John E-Commerce
 
 Ema_John is a full-fledged e-commerce project designed to provide users with a seamless shopping experience. It features user authentication using Firebase Authentication, allowing users to sign up or sign in securely. Users can add items to their cart, remove items from the cart, and view their cart contents upon logging in.
 
